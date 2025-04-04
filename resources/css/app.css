@@ -1,0 +1,8 @@
+.invalid-feedback {
+    border-color: #dc3545; /* Warna merah untuk border */
+    padding-right: calc(1.5em + 0.75rem); /* Spasi untuk ikon */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23dc3545' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3e%3cpath d='M18 6L6 18M6 6l12 12'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
