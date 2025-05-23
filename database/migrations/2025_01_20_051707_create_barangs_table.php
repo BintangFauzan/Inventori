@@ -11,19 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pembelians', function (Blueprint $table) {
+        Schema::create('barangs', function (Blueprint $table) {
             $table->id();
-
-            // PERBAIKAN: Gunakan foreignId untuk kompatibilitas dengan $table->id() di tabel barangs
-            $table->foreignId('barang_id')->constrained('barangs');
-
-            // Atau alternatif manual:
-            // $table->unsignedBigInteger('barang_id');
-            // $table->foreign('barang_id')->references('id')->on('barangs');
-
-            $table->integer('jumlah');
-            $table->decimal('total_harga', 15, 2); // precision 15, scale 2
-            $table->date('tanggal_pembelian');
+            $table->string('nama_barang');
+            $table->string('jenis_barang');
+            $table->integer('stok');
+            $table->decimal('harga');
             $table->timestamps();
         });
     }
@@ -33,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pembelians');
+        Schema::dropIfExists('barangs');
     }
 };

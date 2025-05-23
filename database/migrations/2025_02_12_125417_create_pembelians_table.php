@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('pembelians', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('barang_id');
+
+            // Cara yang lebih simple - otomatis BIGINT UNSIGNED + foreign key
+            $table->foreignId('barang_id')->constrained('barangs');
+
             $table->integer('jumlah_barang');
             $table->decimal('harga_barang', 10, 2);
             $table->timestamps();
-
-            $table->foreign('barang_id')->references('id')->on('barangs');
         });
     }
 
